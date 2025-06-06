@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Netflix Clone - Stream Movies & TV Shows Online</title>
+    <meta name="description" content="Watch movies and TV shows online. Stream unlimited content on Netflix Clone." />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" as="image">
+    <link rel="preload" href="stranger-things.webp" as="image">
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-content">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+          alt="Netflix"
+          class="loading-logo"
+        />
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-brand">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+          alt="Netflix"
+          class="logo"
+        />
+      </div>
+      
+      <!-- Mobile menu button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <div class="navbar-nav" id="navbarNav">
+        <a href="#" class="nav-link active">Home</a>
+        <a href="#" class="nav-link">TV Shows</a>
+        <a href="#" class="nav-link">Movies</a>
+        <a href="#" class="nav-link">New & Popular</a>
+        <a href="#" class="nav-link">My List</a>
+        <a href="#" class="nav-link">Browse by Languages</a>
+      </div>
+      <div class="navbar-right">
+        <div class="search-container">
+          <i class="fas fa-search search-icon" id="searchIcon"></i>
+          <input type="text" class="search-input" id="searchInput" placeholder="Titles, people, genres">
+        </div>
+        <a href="#" class="nav-link kids-link">KIDS</a>
+        <i class="fas fa-bell notification-icon"></i>
+        <div class="profile-menu">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+            alt="Profile"
+            class="profile-icon"
+          />
+          <div class="profile-dropdown">
+            <a href="#" class="dropdown-item">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Profile">
+              <span>Profile 1</span>
+            </a>
+            <a href="#" class="dropdown-item">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Profile">
+              <span>Profile 2</span>
+            </a>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-edit"></i>
+              <span>Manage Profiles</span>
+            </a>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-user"></i>
+              <span>Account</span>
+            </a>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-question-circle"></i>
+              <span>Help Center</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-sign-out-alt"></i>
+              <span>Sign out of Netflix</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Stranger Things</h1>
+        <p class="hero-description">
+          When a young boy vanishes, a small town uncovers a mystery involving
+          secret experiments, terrifying supernatural forces and one strange
+          little girl.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-play">
+            <i class="fas fa-play"></i>
+            <span>Play</span>
+          </button>
+          <button class="btn btn-more-info">
+            <i class="fas fa-info-circle"></i>
+            <span>More Info</span>
+          </button>
+        </div>
+        <div class="hero-info">
+          <span class="rating">TV-14</span>
+          <span class="year">2016</span>
+          <span class="seasons">4 Seasons</span>
+          <span class="genre">Sci-Fi</span>
+        </div>
+      </div>
+      <div class="hero-fade"></div>
+    </header>
+
+    <!-- Content Sections -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Trending Now -->
+        <section class="content-section">
+          <h2 class="section-title">Trending Now</h2>
+          <div class="content-row">
+            <div class="content-card large-card">
+              <img src="https://images.unsplash.com/photo-1518929458119-e5bf444c30f4?w=400&h=225&fit=crop" alt="Action Movie" />
+              <div class="netflix-badge">N</div>
+              <div class="card-overlay">
+                <div class="overlay-top">
+                  <div class="netflix-badge">N</div>
+                </div>
+                <div class="overlay-bottom">
+                  <div class="overlay-title">Action Thriller</div>
+                  <div class="overlay-controls">
+                    <div class="control-btn play-btn"></div>
+                    <div class="control-btn check-btn"></div>
+                    <div class="control-btn thumbs-btn"></div>
+                    <div class="control-btn more-btn"></div>
+                  </div>
+                  <div class="overlay-info">
+                    <div class="info-badge">TV-MA</div>
+                    <div class="info-badge">Action</div>
+                    <div class="info-badge">4K</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card">
+              <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=300&h=169&fit=crop" alt="Drama Series" />
+              <div class="netflix-badge">N</div>
+              <div class="card-overlay">
+                <div class="overlay-top">
+                  <div class="netflix-badge">N</div>
+                </div>
+                <div class="overlay-bottom">
+                  <div class="overlay-title">Drama Series</div>
+                  <div class="overlay-controls">
+                    <div class="control-btn play-btn"></div>
+                    <div class="control-btn check-btn"></div>
+                    <div class="control-btn thumbs-btn"></div>
+                    <div class="control-btn more-btn"></div>
+                  </div>
+                  <div class="overlay-info">
+                    <div class="info-badge">TV-14</div>
+                    <div class="info-badge">Drama</div>
+                    <div class="info-badge">HD</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card">
+              <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=300&h=169&fit=crop" alt="Comedy Show" />
+              <div class="netflix-badge">N</div>
+              <div class="card-overlay">
+                <div class="overlay-top">
+                  <div class="netflix-badge">N</div>
+                </div>
+                <div class="overlay-bottom">
+                  <div class="overlay-title">Comedy Special</div>
+                  <div class="overlay-controls">
+                    <div class="control-btn play-btn"></div>
+                    <div class="control-btn check-btn"></div>
+                    <div class="control-btn thumbs-btn"></div>
+                    <div class="control-btn more-btn"></div>
+                  </div>
+                  <div class="overlay-info">
+                    <div class="info-badge">TV-MA</div>
+                    <div class="info-badge">Comedy</div>
+                    <div class="info-badge">HD</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card">
+              <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=300&h=169&fit=crop" alt="Sci-Fi Movie" />
+              <div class="netflix-badge">N</div>
+              <div class="card-overlay">
+                <div class="overlay-top">
+                  <div class="netflix-badge">N</div>
+                </div>
+                <div class="overlay-bottom">
+                  <div class="overlay-title">Sci-Fi Adventure</div>
+                  <div class="overlay-controls">
+                    <div class="control-btn play-btn"></div>
+                    <div class="control-btn check-btn"></div>
+                    <div class="control-btn thumbs-btn"></div>
+                    <div class="control-btn more-btn"></div>
+                  </div>
+                  <div class="overlay-info">
+                    <div class="info-badge">PG-13</div>
+                    <div class="info-badge">Sci-Fi</div>
+                    <div class="info-badge">4K</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card">
+              <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=169&fit=crop" alt="Horror Movie" />
+              <div class="netflix-badge">N</div>
+              <div class="card-overlay">
+                <div class="overlay-top">
+                  <div class="netflix-badge">N</div>
+                </div>
+                <div class="overlay-bottom">
+                  <div class="overlay-title">Horror Thriller</div>
+                  <div class="overlay-controls">
+                    <div class="control-btn play-btn"></div>
+                    <div class="control-btn check-btn"></div>
+                    <div class="control-btn thumbs-btn"></div>
+                    <div class="control-btn more-btn"></div>
+                  </div>
+                  <div class="overlay-info">
+                    <div class="info-badge">R</div>
+                    <div class="info-badge">Horror</div>
+                    <div class="info-badge">HD</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Netflix Originals -->
+        <section class="content-section">
+          <h2 class="section-title">Netflix Originals</h2>
+          <div class="content-row">
+            <div class="content-card">
+              <img src="https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=300&h=169&fit=crop" alt="Original Series" />
+              <div class="netflix-badge">N</div>
+              <div class="card-overlay">
+                <div class="overlay-top">
+                  <div class="netflix-badge">N</div>
+                </div>
+                <div class="overlay-bottom">
+                  <div class="overlay-title">Crown Jewels</div>
+                  <div class="overlay-controls">
+                    <div class="control-btn play-btn"></div>
+                    <div class="control-btn check-btn"></div>
+                    <div class="control-btn thumbs-btn"></div>
+                    <div class="control-btn more-btn"></div>
+                  </div>
+                  <div class="overlay-info">
+                    <div class="info-badge">TV-MA</div>
+                    <div class="info-badge">Limited Series</div>
+                    <div class="info-badge">4K</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card">
+              <img src="mission.webp" alt="When Life Gives You Tangerines" />
+              <div class="netflix-badge">N</div>
+              <div class="card-overlay">
+                <div class="overlay-top">
+                  <div class="netflix-badge">N</div>
+                </div>
+                <div class="overlay-bottom">
+                  <div class="overlay-title">Mission Impossible</div>
+                  <div class="overlay-controls">
+                    <div class="control-btn play-btn"></div>
+                    <div class="control-btn check-btn"></div>
+                    <div class="control-btn thumbs-btn"></div>
+                    <div class="control-btn more-btn"></div>
+                  </div>
+                  <div class="overlay-info">
+                    <div class="info-badge">TV-MA</div>
+                    <div class="info-badge">Action</div>
+                    <div class="info-badge">HD</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card">
+              <img src="https://images.unsplash.com/photo-1595769816263-9b910be24d5f?w=300&h=169&fit=crop" alt="Documentary" />
+              <div class="netflix-badge">N</div>
+              <div class="card-overlay">
+                <div class="overlay-top">
+                  <div class="netflix-badge">N</div>
+                </div>
+                <div class="overlay-bottom">
+                  <div class="overlay-title">Nature Documentary</div>
+                  <div class="overlay-controls">
+                    <div class="control-btn play-btn"></div>
+                    <div class="control-btn check-btn"></div>
+                    <div class="control-btn thumbs-btn"></div>
+                    <div class="control-btn more-btn"></div>
+                  </div>
+                  <div class="overlay-info">
+                    <div class="info-badge">TV-G</div>
+                    <div class="info-badge">Documentary</div>
+                    <div class="info-badge">4K</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card">
+              <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=300&h=169&fit=crop" alt="Romance Movie" />
+              <div class="netflix-badge">N</div>
+              <div class="card-overlay">
+                <div class="overlay-top">
+                  <div class="netflix-badge">N</div>
+                </div>
+                <div class="overlay-bottom">
+                  <div class="overlay-title">Romance Drama</div>
+                  <div class="overlay-controls">
+                    <div class="control-btn play-btn"></div>
+                    <div class="control-btn check-btn"></div>
+                    <div class="control-btn thumbs-btn"></div>
+                    <div class="control-btn more-btn"></div>
+                  </div>
+                  <div class="overlay-info">
+                    <div class="info-badge">PG-13</div>
+                    <div class="info-badge">Romance</div>
+                    <div class="info-badge">HD</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card">
+              <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=300&h=169&fit=crop" alt="Animated Series" />
+              <div class="netflix-badge">N</div>
+              <div class="card-overlay">
+                <div class="overlay-top">
+                  <div class="netflix-badge">N</div>
+                </div>
+                <div class="overlay-bottom">
+                  <div class="overlay-title">Animated Adventures</div>
+                  <div class="overlay-controls">
+                    <div class="control-btn play-btn"></div>
+                    <div class="control-btn check-btn"></div>
+                    <div class="control-btn thumbs-btn"></div>
+                    <div class="control-btn more-btn"></div>
+                  </div>
+                  <div class="overlay-info">
+                    <div class="info-badge">TV-Y7</div>
+                    <div class="info-badge">Animation</div>
+                    <div class="info-badge">HD</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Continue Watching -->
+        <section class="content-section">
+          <h2 class="section-title">Continue Watching for User</h2>
+          <div class="content-row">
+            <div class="content-card continue-watching">
+              <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=300&h=169&fit=crop" alt="Continue Watching" />
+              <div class="progress-bar">
+                <div class="progress" style="width: 65%"></div>
+              </div>
+              <div class="card-overlay">
+                <div class="overlay-bottom">
+                  <div class="overlay-title">Space Odyssey</div>
+                  <div class="overlay-controls">
+                    <div class="control-btn play-btn"></div>
+                    <div class="control-btn check-btn"></div>
+                    <div class="control-btn thumbs-btn"></div>
+                    <div class="control-btn more-btn"></div>
+                  </div>
+                  <div class="episode-info">S1:E5 "The Discovery"</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card continue-watching">
+              <img src="https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=300&h=169&fit=crop" alt="Continue Watching" />
+              <div class="progress-bar">
+                <div class="progress" style="width: 25%"></div>
+              </div>
+              <div class="card-overlay">
+                <div class="overlay-bottom">
+                  <div class="overlay-title">Royal Affairs</div>
+                  <div class="overlay-controls">
+                    <div class="control-btn play-btn"></div>
+                    <div class="control-btn check-btn"></div>
+                    <div class="control-btn thumbs-btn"></div>
+                    <div class="control-btn more-btn"></div>
+                  </div>
+                  <div class="episode-info">S2:E2 "The Throne"</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card continue-watching">
+              <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=300&h=169&fit=crop" alt="Continue Watching" />
+              <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+              <div class="card-overlay">
+                <div class="overlay-bottom">
+                  <div class="overlay-title">Comedy Night</div>
+                  <div class="overlay-controls">
+                    <div class="control-btn play-btn"></div>
+                    <div class="control-btn check-btn"></div>
+                    <div class="control-btn thumbs-btn"></div>
+                    <div class="control-btn more-btn"></div>
+                  </div>
+                  <div class="episode-info">Special "Stand-up Show"</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- My List -->
+        <section class="content-section">
+          <h2 class="section-title">My List</h2>
+          <div class="content-row">
+            <div class="content-card">
+              <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=169&fit=crop" alt="My List Item" />
+              <div class="my-list-badge">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="card-overlay">
+                <div class="overlay-bottom">
+                  <div class="overlay-title">Thriller Collection</div>
+                  <div class="overlay-controls">
+                    <div class="control-btn play-btn"></div>
+                    <div class="control-btn check-btn active"></div>
+                    <div class="control-btn thumbs-btn"></div>
+                    <div class="control-btn more-btn"></div>
+                  </div>
+                  <div class="overlay-info">
+                    <div class="info-badge">R</div>
+                    <div class="info-badge">Thriller</div>
+                    <div class="info-badge">HD</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Video Preview Modal -->
+    <div class="video-modal" id="videoModal">
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-video">
+          <video id="previewVideo" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="modal-info">
+          <h2 class="modal-title" id="modalTitle">Video Title</h2>
+          <div class="modal-buttons">
+            <button class="btn btn-play">
+              <i class="fas fa-play"></i>
+              <span>Play</span>
+            </button>
+            <button class="btn btn-info">
+              <i class="fas fa-info-circle"></i>
+              <span>More Info</span>
+            </button>
+            <button class="btn-my-list">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+          <div class="modal-description" id="modalDescription">
+            Video description goes here...
+          </div>
+          <div class="modal-metadata">
+            <span class="rating">PG-13</span>
+            <span class="year">2024</span>
+            <span class="duration">2h 15m</span>
+            <span class="quality">HD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-top">
+          <div class="social-links">
+            <a href="#" class="social-link"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <ul>
+              <li><a href="#">Audio Description</a></li>
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Legal Notices</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Cookie Preferences</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <ul>
+              <li><a href="#">Gift Cards</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Corporate Information</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <ul>
+              <li><a href="#">Media Center</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <button class="service-code">Service Code</button>
+          <p class="copyright">© 1997-2024 Netflix, Inc.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
